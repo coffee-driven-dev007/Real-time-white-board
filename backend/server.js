@@ -1,3 +1,4 @@
+// server.js
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
@@ -7,30 +8,33 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+
+// Use environment variable for allowed origin, fallback to localhost
+const FRONTEND_URL = process.env.CORS_ORIGIN || "http://localhost:3000";
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: FRONTEND_URL,
     methods: ["GET", "POST"],
-    credentials: true
+    credentials: true,
 }));
 
+// Create HTTP server
 const server = http.createServer(app);
 
+// Initialize Socket.IO
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: FRONTEND_URL,
         methods: ["GET", "POST"],
-        credentials: true
-    }
+        credentials: true,
+    },
 });
 
+// Socket.IO connection
 io.on("connection", (socket) => {
     console.log("User connected:", socket.id);
 
-    // When a user draws something
     socket.on("drawing", (data) => {
-        // Broadcast to everyone except sender
         socket.broadcast.emit("drawing", data);
     });
 
@@ -39,6 +43,8 @@ io.on("connection", (socket) => {
     });
 });
 
-server.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+// Use dynamic PORT for Vercel or fallback for local dev
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
