@@ -1,9 +1,11 @@
 import { io } from "socket.io-client";
 
-// Load environment variables (in React, this is automatically handled)
-// process.env.REACT_APP_SOCKET_URL is accessible in React
+// Vite environment variables
+const SOCKET_URL =
+  import.meta.env.VITE_SOCKET_URL ||
+  "http://localhost:5000";
 
-export const socket = io(process.env.REACT_APP_SOCKET_URL, {
-    transports: ["websocket"],
-    withCredentials: true
+export const socket = io(SOCKET_URL, {
+  transports: ["websocket"],
+  withCredentials: true,
 });
