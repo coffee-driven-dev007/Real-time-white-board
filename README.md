@@ -110,7 +110,7 @@ Through this project I explored:
 
 ## 🖌️ Desktop
 
-![Whiteboard](./assets/home.png)
+![Whiteboard](./home.png)
 
 
 # 🏗️ System Architecture
