@@ -112,13 +112,6 @@ Through this project I explored:
 
 ![Whiteboard](./assets/home.png)
 
----
-
-## 📱 Mobile
-
-![Mobile](./assets/mobile.png)
-
----
 
 # 🏗️ System Architecture
 
