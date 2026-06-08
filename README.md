@@ -1,11 +1,11 @@
 # 🎨 Real-Time Whiteboard
 
 <p align="center">
-  <img src="./assets/banner.png" width="100%" alt="Real-Time Whiteboard Banner"/>
+  <img src="./banner.png" width="100%" alt="Real-Time Whiteboard Banner"/>
 </p>
 
 <h3 align="center">
-A Collaborative Real-Time Drawing Application
+Real-Time Collaborative Drawing Application
 </h3>
 
 <p align="center">
@@ -14,68 +14,46 @@ Built with React, Node.js, Express, Socket.IO, and HTML5 Canvas.
 
 <p align="center">
   <a href="https://real-time-white-board.vercel.app">
-    <img src="https://img.shields.io/badge/🚀_Live_Demo-Visit_App-red?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/Live_Demo-Visit-success?style=for-the-badge">
   </a>
   <a href="https://real-time-white-board-server.onrender.com">
-    <img src="https://img.shields.io/badge/⚡_Backend_API-Hosted_on_Render-blue?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/API-Online-blue?style=for-the-badge">
   </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Live-success" />
-  <img src="https://img.shields.io/badge/Frontend-React-blue" />
-  <img src="https://img.shields.io/badge/Backend-Node.js-green" />
-  <img src="https://img.shields.io/badge/Realtime-Socket.IO-orange" />
-  <img src="https://img.shields.io/badge/Frontend-Vercel-black" />
-  <img src="https://img.shields.io/badge/Backend-Render-46E3B7" />
+  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">
 </p>
 
 ---
 
 # 🚀 Live Demo
 
-### 🌐 Frontend
-
-https://real-time-white-board.vercel.app
-
-### ⚡ Backend API
-
-https://real-time-white-board-server.onrender.com
-
-> **Deployment Note**
->
-> The frontend is deployed on **Vercel**, while the backend is hosted on **Render**.
->
-> During deployment I discovered that my Socket.IO server required persistent WebSocket connections, which weren't suitable for my backend deployment on Vercel's serverless environment.
->
-> To provide reliable real-time communication, I migrated the backend to **Render**, which supports long-running server instances and WebSocket connections. This experience gave me practical insight into deployment trade-offs, infrastructure decisions, and hosting real-time applications in production.
+https://real-time-white-board-wheat.vercel.app
 
 ---
 
 # 📖 Overview
 
-The **Real-Time Whiteboard** is a collaborative drawing platform that enables multiple users to draw simultaneously on a shared canvas with instant synchronization.
+Real-Time Whiteboard is a collaborative drawing platform that enables multiple users to draw on the same canvas simultaneously using persistent WebSocket connections.
 
-Built using **React**, **Socket.IO**, and **Node.js**, the application demonstrates how real-time systems maintain synchronized state across multiple connected clients while delivering a smooth and responsive drawing experience.
+Instead of relying on traditional request-response communication, the application uses **Socket.IO** to broadcast drawing events in real time, ensuring all connected clients remain synchronized with minimal latency.
 
-This project strengthened my understanding of WebSockets, event-driven programming, state synchronization, and deploying production-ready real-time applications.
+This project was built to gain practical experience designing real-time systems, event-driven architectures, and production-ready deployment strategies.
 
 ---
 
 # 🎯 Why I Built This
 
-Traditional web applications communicate through request-response cycles.
+Modern collaborative applications like **Figma**, **Miro**, and **Google Jamboard** allow multiple users to interact with shared data instantly.
 
-I wanted to explore how modern collaborative applications such as Google Jamboard, Figma, and Miro enable multiple users to interact with shared data simultaneously.
+I wanted to understand the engineering principles behind these experiences by building a simplified collaborative system from scratch.
 
-This project allowed me to gain practical experience with:
+Through this project I explored:
 
-* WebSocket communication
-* Event-driven architecture
-* State synchronization
-* Low-latency communication
-* Real-time user collaboration
-* Production deployment
+- WebSocket communication
+- Event-driven architecture
+- Real-time state synchronization
+- Low-latency client communication
+- Production deployment
+- Infrastructure decisions
 
 ---
 
@@ -83,140 +61,200 @@ This project allowed me to gain practical experience with:
 
 ## 👥 Collaboration
 
-* Multi-user drawing
-* Instant synchronization
-* Shared collaborative workspace
-* Low-latency communication
-* Live canvas updates
-
-## 🎨 Drawing Features
-
-* Freehand drawing
-* Smooth brush rendering
-* Canvas clearing
-* Responsive canvas
-* Mobile-friendly interface
-
-## ⚙️ Technical Features
-
-* Socket.IO WebSocket communication
-* HTML5 Canvas rendering
-* Event-driven architecture
-* Responsive React application
-* Environment variable configuration
-* Production deployment
+- Multi-user collaborative drawing
+- Instant canvas synchronization
+- Shared drawing workspace
+- Persistent WebSocket communication
+- Low-latency event broadcasting
 
 ---
 
-# ⚡ Technology Stack
+## 🎨 Drawing
 
-| Layer            | Technology   |
-| ---------------- | ------------ |
-| Frontend         | React.js     |
-| Backend          | Node.js      |
-| Framework        | Express.js   |
-| Real-Time        | Socket.IO    |
-| Rendering        | HTML5 Canvas |
-| Frontend Hosting | Vercel       |
-| Backend Hosting  | Render       |
-| Version Control  | Git & GitHub |
+- Freehand drawing
+- Smooth brush rendering
+- Responsive canvas
+- Canvas clearing
+- Mobile-friendly interface
+
+---
+
+## ⚙️ Engineering
+
+- Socket.IO WebSocket communication
+- HTML5 Canvas rendering
+- Event-driven backend
+- React frontend
+- Environment variable configuration
+- Production deployment
+- Cross-origin communication (CORS)
+
+---
+
+# ⚡ Tech Stack
+
+| Layer | Technology |
+|--------|------------|
+| Frontend | React.js |
+| Backend | Node.js |
+| Framework | Express.js |
+| Real-Time | Socket.IO |
+| Rendering | HTML5 Canvas |
+| Frontend Hosting | Vercel |
+| Backend Hosting | Render |
+| Version Control | Git & GitHub |
 
 ---
 
 # 📸 Application Preview
 
-## 🖌️ Whiteboard
+## 🖌️ Desktop
 
-<p align="center">
-<img src="./assets/home.png" width="100%" alt="Whiteboard"/>
-</p>
+![Whiteboard](./assets/home.png)
 
 ---
 
-## 📱 Mobile Experience
+## 📱 Mobile
 
-<p align="center">
-<img src="./assets/mobile.png" width="350" alt="Mobile View"/>
-</p>
+![Mobile](./assets/mobile.png)
 
 ---
 
 # 🏗️ System Architecture
 
 ```text
-                User A
-                  │
-                  │
-                  ▼
-          React Frontend
-                  │
-          Socket.IO Client
-                  │
-═══════════════════════════════
-       WebSocket Connection
-═══════════════════════════════
-                  │
-          Socket.IO Server
-                  │
-          Express Backend
-                  │
-       Broadcast Events
-                  │
-        Connected Clients
-                  │
-      User B • User C • User D
+                    User A
+                       │
+                       ▼
+               React Frontend
+                       │
+               Socket.IO Client
+                       │
+══════════════════════════════════════
+        Persistent WebSocket
+══════════════════════════════════════
+                       │
+               Express Server
+                       │
+                Socket.IO Server
+                       │
+             Broadcast Drawing Events
+          ┌───────────┼───────────┐
+          ▼           ▼           ▼
+       User B      User C      User D
 ```
+
+The server acts as the central event hub, broadcasting drawing events received from one client to every connected client, keeping the canvas synchronized in real time.
 
 ---
 
 # 🔄 Application Flow
 
-1. A user draws on the HTML5 canvas.
+1. User draws on the HTML5 Canvas.
 2. Drawing coordinates are emitted through Socket.IO.
-3. The Express server receives the drawing event.
+3. Express receives the drawing event.
 4. Socket.IO broadcasts the event to every connected client.
-5. Each client redraws the stroke instantly.
-6. All connected users remain synchronized in real time.
+5. Each client renders the stroke instantly.
+6. All connected users remain synchronized.
+
+---
+
+# ⚙️ Design Decisions
+
+## Why WebSockets?
+
+Traditional HTTP requires repeated requests to retrieve updates.
+
+Using **WebSockets** enables persistent, bidirectional communication between clients and the server, reducing latency and making real-time collaboration possible.
+
+---
+
+## Why Socket.IO?
+
+Socket.IO simplifies:
+
+- Connection management
+- Automatic reconnection
+- Event-based communication
+- Browser compatibility
+
+making it an excellent choice for collaborative applications.
+
+---
+
+## Why Render instead of Vercel?
+
+Initially both frontend and backend were deployed on **Vercel**.
+
+While the React frontend worked perfectly, the backend relied on persistent WebSocket connections, which are not suited to Vercel's serverless execution model.
+
+Migrating the backend to **Render** provided:
+
+- Long-running server instances
+- Stable WebSocket support
+- Reliable Socket.IO communication
+
+This deployment challenge strengthened my understanding of infrastructure decisions and selecting the appropriate hosting platform based on application requirements.
+
+---
+
+# 🧠 State Synchronization
+
+Maintaining consistent state across connected clients is one of the biggest challenges in collaborative applications.
+
+This project synchronizes drawing operations by broadcasting every drawing event through the server.
+
+Current behavior:
+
+- All active users remain synchronized.
+- New users begin with a blank canvas.
+- Canvas history is intentionally not persisted to keep the application lightweight.
+
+Future versions will introduce persistent drawing sessions backed by a database.
+
+---
+
+# 🧪 Testing
+
+The application was manually tested across multiple browsers and devices to verify:
+
+- Multiple simultaneous users
+- Real-time synchronization
+- WebSocket reconnection
+- Cross-device responsiveness
+- CORS configuration
+- Production deployment
 
 ---
 
 # 🎓 Skills Demonstrated
 
-* React Development
-* Node.js Development
-* Express APIs
-* WebSocket Programming
-* Socket.IO
-* Event-Driven Architecture
-* State Synchronization
-* Real-Time Systems
-* Responsive Design
-* Production Deployment
-* Environment Configuration
-* Problem Solving
+- React Development
+- Node.js
+- Express.js
+- Socket.IO
+- WebSocket Programming
+- Event-Driven Architecture
+- State Synchronization
+- HTML5 Canvas
+- Production Deployment
+- Environment Configuration
+- Infrastructure Decisions
+- Real-Time Systems
+- Problem Solving
 
 ---
 
 # 📂 Project Structure
 
-```bash
+```text
 Real-time-white-board
 │
-├── frontend
-│   ├── src
-│   ├── public
-│   └── package.json
+├── frontend/          React application
 │
-├── backend
-│   ├── socket
-│   ├── routes
-│   ├── server.js
-│   └── package.json
+├── backend/           Express + Socket.IO server
 │
-├── assets
-│   ├── banner.png
-│   ├── home.png
-│   └── mobile.png
+├── assets/            Images and documentation
 │
 └── README.md
 ```
@@ -231,7 +269,7 @@ Real-time-white-board
 git clone https://github.com/coffee-driven-dev007/Real-time-white-board.git
 ```
 
-## Navigate Into Project
+## Navigate into the project
 
 ```bash
 cd Real-time-white-board
@@ -273,16 +311,14 @@ VITE_SOCKET_URL=http://localhost:5000
 
 # ▶️ Running Locally
 
-## Start Backend
+## Backend
 
 ```bash
 cd backend
 npm run dev
 ```
 
----
-
-## Start Frontend
+## Frontend
 
 ```bash
 cd frontend
@@ -295,72 +331,71 @@ npm run dev
 
 ## Real-Time Synchronization
 
-Designed an event-driven communication model using Socket.IO to synchronize drawing events across multiple connected users while maintaining low latency.
-
----
-
-## WebSocket Communication
-
-Implemented persistent client-server communication using Socket.IO instead of traditional HTTP polling, enabling live updates across all connected clients.
+Designed an event-driven communication model that broadcasts drawing events to all connected clients while maintaining low latency.
 
 ---
 
 ## Canvas Rendering
 
-Leveraged the HTML5 Canvas API to efficiently render freehand drawing while maintaining a responsive user experience.
+Implemented efficient HTML5 Canvas rendering for smooth freehand drawing without excessive re-rendering.
 
 ---
 
-## Deployment & Infrastructure
+## Deployment
 
-Deploying a real-time application required careful consideration of hosting platforms.
+One of the biggest engineering challenges was deploying persistent WebSocket connections.
 
-Initially, I attempted to deploy both the frontend and backend on **Vercel**. While the frontend worked perfectly, the backend required persistent WebSocket connections for Socket.IO, which were not suitable for my deployment on Vercel's serverless environment.
+Attempting to host both frontend and backend on Vercel exposed the limitations of serverless infrastructure for long-lived Socket.IO connections.
 
-To solve this, I migrated the backend to **Render**, where long-running server instances support persistent WebSocket connections.
+Migrating the backend to Render solved the issue and provided valuable hands-on experience with:
 
-This experience strengthened my understanding of:
-
-* WebSocket infrastructure
-* Serverless deployment limitations
-* Production networking
-* Environment variable management
-* CORS configuration
-* Choosing the right hosting platform for different workloads
+- WebSocket infrastructure
+- Serverless limitations
+- Environment variables
+- CORS configuration
+- Production networking
+- Hosting architecture decisions
 
 ---
 
-# 🧠 Key Takeaways
+# 📚 Key Takeaways
 
-This project strengthened my understanding of:
+Building this application provided practical experience with:
 
-* Real-Time Application Development
-* WebSocket Communication
-* Event-Driven Programming
-* React Architecture
-* Backend API Development
-* State Synchronization
-* Production Deployment
-* Infrastructure Decisions
-* Software Engineering Best Practices
+- Real-Time Application Development
+- Event-Driven Systems
+- WebSocket Communication
+- Production Deployment
+- Infrastructure Planning
+- React Architecture
+- Backend API Development
+- State Synchronization
+- Software Engineering Best Practices
 
 ---
 
-# 📈 Future Enhancements
+# 🚀 Future Improvements
 
-Planned improvements include:
+## High Priority
 
-* User Authentication
-* Private Collaboration Rooms
-* Cursor Presence Indicators
-* Undo / Redo
-* Drawing History
-* Shape Tools
-* Text Tool
-* Image Uploads
-* Session Persistence
-* Export as PDF
-* Export as PNG
+- User Authentication
+- Private Collaboration Rooms
+- Session Persistence
+- Canvas History
+
+## Medium Priority
+
+- Cursor Presence Indicators
+- Undo / Redo
+- Shape Tools
+- Text Tool
+
+## Nice to Have
+
+- Image Uploads
+- PDF Export
+- PNG Export
+- Collaborative Comments
 
 ---
 
@@ -368,7 +403,7 @@ Planned improvements include:
 
 ## James Matsheni
 
-Full-Stack JavaScript Developer passionate about building scalable systems, real-time applications, and software that solves real-world problems.
+Full-Stack Developer passionate about building scalable backend systems, real-time applications, and production-ready software.
 
 **GitHub**
 
@@ -382,7 +417,9 @@ https://portfolio-beta-drab-76.vercel.app
 
 # ⭐ Support
 
-If you found this project useful or interesting, consider giving it a ⭐ on GitHub. It helps showcase the project and supports future development.
+If you found this project interesting or useful, consider giving it a ⭐ on GitHub.
+
+It helps support future development and makes the repository more visible to others.
 
 ---
 
@@ -393,6 +430,9 @@ This project is licensed under the MIT License.
 ---
 
 <p align="center">
-Built with ❤️ by <strong>James Matsheni</strong><br>
-Building scalable, real-time applications with modern JavaScript technologies.
+
+Built with ❤️ by <strong>James Matsheni</strong>
+
+Building reliable, real-time systems with modern JavaScript technologies.
+
 </p>
